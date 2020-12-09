@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Problem Solving Project</title>
+</head>
+<body>
+    <h1>This is the headline</h1>
+    <p>1)
+Topcoder : DiceThrows  (Probability , DP) <br>
+Let , <br>
+      a[i] = Probability of getting sum ‘i’ for player A.<br>
+      b[i] = Probability of getting sum ‘i’ for player B.<br>
+Here , i can be any valid sum according to the constraints. (1 – 20000).
+To calculate a[i] for all i , we can use DP. DP states should be ,  *steps (how many times person A need to throw that dice) and *sum (means I). b[i] can be calculated same way. So the  the probability of winning A = <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <munderover>
+    <mo>&#x2211;<!-- ∑ --></mo>
+    <mn>1</mn>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mn>20000</mn>
+    </mrow>
+  </munderover>
+  <mo stretchy="false">(</mo>
+  <mi>a</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2217;<!-- ∗ --></mo>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>&#x2212;<!-- − --></mo>
+  <munderover>
+    <mo>&#x2211;<!-- ∑ --></mo>
+    <mn>1</mn>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>i</mi>
+      <mo>&#x2212;<!-- − --></mo>
+      <mn>1</mn>
+    </mrow>
+  </munderover>
+  <mi>b</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">)</mo>
+</math>  . Here , we can use cumulative sum technique to reduce time complexity.</p>
+</body>
+</html>
